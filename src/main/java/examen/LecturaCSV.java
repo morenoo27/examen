@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -32,18 +31,15 @@ public class LecturaCSV {
      * @return Estructura Map con formato: inicial -> nombre completo
      */
     public static Map<String, String> leerArchivoCSV(String nombreArchivo, String ruta) {
-
-        Map<String, String> asignaturas = new TreeMap<>();
         
+//      VARIABLES NECESARIAS
         String idFichero = ruta + nombreArchivo.concat(".csv");
-        
         ArrayList<String[]> totalAsignaturas = new ArrayList<>();
 
         try ( Scanner datosFichero = new Scanner(new File(idFichero), "ISO-8859-1")) {
 
 //          VARIABLES NECESARIAS
             String linea;
-
             String[] tokens;
 
 //          eliminamos la primera linea, ya que es la que nos da la info de que
@@ -64,7 +60,7 @@ public class LecturaCSV {
 
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(LecturaCSV.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("No se encuentra el archivo");
         }
 
         
