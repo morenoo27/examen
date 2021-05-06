@@ -34,12 +34,18 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return null;
+        return nombre + "\n"
+                + obtenercalificaciones();
     }
 
-    void setCalificaciones(Map<String, String> createMap, RegistroJSON registro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private String obtenercalificaciones() {
+        
+        String calificacion = null;
+        
+        for (Map.Entry<String, String> entry : calificaciones.entrySet()) {
+            calificacion += entry.getKey() + ":" + entry.getValue();
+            calificacion += " ";
+        }
+        return calificacion;
     }
-    
-    
 }
