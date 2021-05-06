@@ -26,12 +26,14 @@ public class Programa {
         ArrayList<RegistroJSON> listaAlumnos = LecturaJSON.leerFicheroJSONconLista("calificacionesGrupo", "./");
         mostrarArrayList(listaAlumnos);
         
+//      EJERCICIO 3
         ArrayList<Alumno> alumnos = RegistrosToAlumnado.registrosALista(listaAlumnos);
-        
         alumnos.forEach(alumno -> {
             System.out.println(alumno.toString());
         });
 
+        //EJERCICIO 4
+        
     }
 
     /**
