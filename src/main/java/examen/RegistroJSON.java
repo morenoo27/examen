@@ -5,21 +5,32 @@
  */
 package examen;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  *
  * @author alejandro
  */
 public class RegistroJSON {
 
-    private String alumno;
-    private String OACV;
-    private String EA;
-    private String TII;
-    private String TC;
-    private String ING;
-    private String FOL;
-    private String CEAC;
-                                    
+    
+    @JsonProperty("Alumno/a") 
+    public String alumno;
+    @JsonProperty("OACV") 
+    public String oacv;
+    @JsonProperty("EA") 
+    public String ea;
+    @JsonProperty("TII") 
+    public String tii;
+    @JsonProperty("TC") 
+    public String tc;
+    @JsonProperty("ING") 
+    public String ing;
+    @JsonProperty("FOL") 
+    public String fol;
+    @JsonProperty("CEAC") 
+    public String ceac;
+
 
     public String getAlumno() {
         return alumno;
@@ -29,64 +40,64 @@ public class RegistroJSON {
         this.alumno = alumno;
     }
 
-    public String getOACV() {
-        return OACV;
+    public String getOacv() {
+        return oacv;
     }
 
-    public void setOACV(String OACV) {
-        this.OACV = OACV;
+    public void setOacv(String oacv) {
+        this.oacv = oacv;
     }
 
-    public String getEA() {
-        return EA;
+    public String getEa() {
+        return ea;
     }
 
-    public void setEA(String EA) {
-        this.EA = EA;
+    public void setEa(String ea) {
+        this.ea = ea;
     }
 
-    public String getTII() {
-        return TII;
+    public String getTii() {
+        return tii;
     }
 
-    public void setTII(String TII) {
-        this.TII = TII;
+    public void setTii(String tii) {
+        this.tii = tii;
     }
 
-    public String getTC() {
-        return TC;
+    public String getTc() {
+        return tc;
     }
 
-    public void setTC(String TC) {
-        this.TC = TC;
+    public void setTc(String tc) {
+        this.tc = tc;
     }
 
-    public String getING() {
-        return ING;
+    public String getIng() {
+        return ing;
     }
 
-    public void setING(String ING) {
-        this.ING = ING;
+    public void setIng(String ing) {
+        this.ing = ing;
     }
 
-    public String getFOL() {
-        return FOL;
+    public String getFol() {
+        return fol;
     }
 
-    public void setFOL(String FOL) {
-        this.FOL = FOL;
+    public void setFol(String fol) {
+        this.fol = fol;
     }
 
-    public String getCEAC() {
-        return CEAC;
+    public String getCeac() {
+        return ceac;
     }
 
-    public void setCEAC(String CEAC) {
-        this.CEAC = CEAC;
+    public void setCeac(String ceac) {
+        this.ceac = ceac;
     }
 
     @Override
     public String toString() {
-        return alumno + ";" + OACV + ";" + EA + ";" + TII + ";" + TC + ";" + ING + ";" + FOL + ";" + CEAC;
+        return alumno + ";" + oacv + ";" + ea + ";" + tii + ";" + tc + ";" + ing + ";" + fol + ";" + ceac;
     }
 }
