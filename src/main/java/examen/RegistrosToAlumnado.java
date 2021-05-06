@@ -75,6 +75,9 @@ public class RegistrosToAlumnado {
         for (String inicial : iniciales) {
 
             switch (inicial) {
+                case "OACV":
+                    calificaiocnes.put(inicial, registro.getOacv());
+                    break;
                 case "EA":
                     calificaiocnes.put(inicial, registro.getEa());
                     break;
