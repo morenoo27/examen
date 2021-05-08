@@ -32,7 +32,15 @@ public class Programa {
             System.out.println(alumno.toString());
         });
 
-        //EJERCICIO 4
+//      EJERCICIO 4
+        String delia = "Delia";
+        Alumno Delia = buscarAlumno(alumnos, delia);
+        AlumnadoToTSV.escribirTSV(Delia, asignaturas);
+        
+//      EJERCICIO 5
+        String iniciales = "OACV";
+        Estadística OACV = new Estadística(iniciales, listaAlumnos);
+        System.out.println(OACV.toString());
         
     }
 
@@ -61,5 +69,22 @@ public class Programa {
         listaAlumnos.forEach(alumno -> {
             System.out.println(alumno.toString());
         });
+    }
+
+    /**
+     * Metodo para buscar en una lista determinada a un alumno en especifico, por medio de su nombre
+     * 
+     * @param alumnos Lista en la que buscar
+     * @param nombreABuscar NOmbre a buscar
+     * @return Objeto de tipo Alumno con ese nombre
+     */
+    private static Alumno buscarAlumno(ArrayList<Alumno> alumnos, String nombreABuscar) {
+        
+        for (Alumno alumno : alumnos) {
+            if(alumno.getNombre().contains(nombreABuscar)){
+                return alumno;
+            }
+        }
+        return null;
     }
 }

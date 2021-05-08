@@ -27,13 +27,11 @@ public class AlumnadoToTSV {
 
             for (Map.Entry<String, String> entry : alumno.getCalificaciones().entrySet()) {
 
-                String nombreAsignatura, inicial;
+                String nombreAsignatura;
 
-                inicial = entry.getKey();
-
-                nombreAsignatura = buscarNombre(asignaturas, inicial);
+                nombreAsignatura = buscarNombre(asignaturas, entry.getKey());
                 
-                flujo.write(nombreAsignatura + "\t" + entry.getValue());
+                flujo.write(nombreAsignatura + ":" + entry.getValue() + "\t");
 
             }
 
