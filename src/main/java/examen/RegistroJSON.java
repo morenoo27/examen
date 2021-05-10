@@ -15,22 +15,21 @@ public class RegistroJSON {
 
     
     @JsonProperty("Alumno/a") 
-    public String alumno;
+    private String alumno;
     @JsonProperty("OACV") 
-    public String oacv;
+    private String oacv;
     @JsonProperty("EA") 
-    public String ea;
+    private String ea;
     @JsonProperty("TII") 
-    public String tii;
+    private String tii;
     @JsonProperty("TC") 
-    public String tc;
+    private String tc;
     @JsonProperty("ING") 
-    public String ing;
+    private String ing;
     @JsonProperty("FOL") 
-    public String fol;
+    private String fol;
     @JsonProperty("CEAC") 
-    public String ceac;
-
+    private String ceac;
 
     public String getAlumno() {
         return alumno;
@@ -95,7 +94,7 @@ public class RegistroJSON {
     public void setCeac(String ceac) {
         this.ceac = ceac;
     }
-
+    
     @Override
     public String toString() {
         return alumno + ";" + oacv + ";" + ea + ";" + tii + ";" + tc + ";" + ing + ";" + fol + ";" + ceac;

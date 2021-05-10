@@ -30,7 +30,7 @@ public class RegistrosToAlumnado {
     }
 
     /**
-     * metodo que crea un alumno a partir de un objeto tipo RegistroJSON
+     * Metodo que crea un alumno a partir de un objeto tipo RegistroJSON
      *
      * @param registro registro que queremos convertir
      * @return Objeto de tipo alumno
@@ -46,23 +46,26 @@ public class RegistrosToAlumnado {
     }
 
     /**
-     * metodo que , llamando al metodo de la clase LeerCSV obtiene las iniciales de cada modulo
+     * Metodo que , llamando al metodo de la clase LeerCSV obtiene las iniciales de cada modulo
      * 
      * @return Lista con las inicales de los modulos
      */
     private static ArrayList<String> obtenerIniciales() {
 
         Map<String, String> asignaturas = LecturaCSV.leerArchivoCSV("nombresModulos", "./");
+        
         ArrayList<String> iniciales = new ArrayList<>();
+        
         for (Map.Entry<String, String> entry : asignaturas.entrySet()) {
 
             iniciales.add(entry.getKey());
         }
+        
         return iniciales;
     }
 
     /**
-     * metodo que crea una estructura Map con relaicon inicial->nota
+     * Metodo que crea una estructura Map con relaicon inicial->nota
      *
      * @param iniciales iniciales de los modulos
      * @param registro registro en cuestion

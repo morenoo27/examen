@@ -25,7 +25,7 @@ public class Programa {
 //      EJERCICIO 2
         ArrayList<RegistroJSON> listaAlumnos = LecturaJSON.leerFicheroJSONconLista("calificacionesGrupo", "./");
         mostrarArrayList(listaAlumnos);
-        
+
 //      EJERCICIO 3
         ArrayList<Alumno> alumnos = RegistrosToAlumnado.registrosALista(listaAlumnos);
         alumnos.forEach(alumno -> {
@@ -40,8 +40,7 @@ public class Programa {
 //      EJERCICIO 5
         String iniciales = "OACV";
         Estadística OACV = new Estadística(iniciales, listaAlumnos);
-        System.out.println(OACV.toString());
-        
+        System.out.println(OACV.toString());        
     }
 
     /**
