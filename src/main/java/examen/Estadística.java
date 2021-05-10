@@ -8,6 +8,8 @@ package examen;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -74,17 +76,10 @@ public class Estadística {
      */
     private List<String> calificacionesModulo(String iniciales, ArrayList<RegistroJSON> registros) {
 
-        List<String> notas = null;
-
-        Map<String, String> calificacionesModulo = (Map<String, String>) RegistrosToAlumnado.registrosALista(registros).stream()
+        return RegistrosToAlumnado.registrosALista(registros).stream()
                 .map(alumno -> alumno.getCalificaciones())
-                .filter(calif -> calif.containsKey(iniciales));
-
-        calificacionesModulo.entrySet().forEach(entry -> {
-            notas.add(entry.getValue());
-        });
-
-        return notas;
+                .map(calif -> calif.get(iniciales.toUpperCase()))
+                .collect(Collectors.toList());    
     }
 
     /**
