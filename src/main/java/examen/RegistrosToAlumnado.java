@@ -79,25 +79,25 @@ public class RegistrosToAlumnado {
 
             switch (inicial) {
                 case "OACV":
-                    calificaiocnes.put(inicial, registro.getOacv());
+                    calificaiocnes.put(inicial, registro.getOACV());
                     break;
                 case "EA":
-                    calificaiocnes.put(inicial, registro.getEa());
+                    calificaiocnes.put(inicial, registro.getEA());
                     break;
                 case "TII":
-                    calificaiocnes.put(inicial, registro.getTii());
+                    calificaiocnes.put(inicial, registro.getTII());
                     break;
                 case "TC":
-                    calificaiocnes.put(inicial, registro.getTc());
+                    calificaiocnes.put(inicial, registro.getTC());
                     break;
                 case "ING":
-                    calificaiocnes.put(inicial, registro.getIng());
+                    calificaiocnes.put(inicial, registro.getING());
                     break;
                 case "FOL":
-                    calificaiocnes.put(inicial, registro.getFol());
+                    calificaiocnes.put(inicial, registro.getFOL());
                     break;
                 case "CEAC":
-                    calificaiocnes.put(inicial, registro.getCeac());
+                    calificaiocnes.put(inicial, registro.getCEAC());
                     break;
             }
         }

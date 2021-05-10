@@ -17,19 +17,19 @@ public class RegistroJSON {
     @JsonProperty("Alumno/a") 
     private String alumno;
     @JsonProperty("OACV") 
-    private String oacv;
+    private String OACV;
     @JsonProperty("EA") 
-    private String ea;
+    private String EA;
     @JsonProperty("TII") 
-    private String tii;
+    private String TII;
     @JsonProperty("TC") 
-    private String tc;
+    private String TC;
     @JsonProperty("ING") 
-    private String ing;
+    private String ING;
     @JsonProperty("FOL") 
-    private String fol;
+    private String FOL;
     @JsonProperty("CEAC") 
-    private String ceac;
+    private String CEAC;
 
     public String getAlumno() {
         return alumno;
@@ -39,64 +39,64 @@ public class RegistroJSON {
         this.alumno = alumno;
     }
 
-    public String getOacv() {
-        return oacv;
+    public String getOACV() {
+        return OACV;
     }
 
-    public void setOacv(String oacv) {
-        this.oacv = oacv;
+    public void setOACV(String OACV) {
+        this.OACV = OACV;
     }
 
-    public String getEa() {
-        return ea;
+    public String getEA() {
+        return EA;
     }
 
-    public void setEa(String ea) {
-        this.ea = ea;
+    public void setEA(String EA) {
+        this.EA = EA;
     }
 
-    public String getTii() {
-        return tii;
+    public String getTII() {
+        return TII;
     }
 
-    public void setTii(String tii) {
-        this.tii = tii;
+    public void setTII(String TII) {
+        this.TII = TII;
     }
 
-    public String getTc() {
-        return tc;
+    public String getTC() {
+        return TC;
     }
 
-    public void setTc(String tc) {
-        this.tc = tc;
+    public void setTC(String TC) {
+        this.TC = TC;
     }
 
-    public String getIng() {
-        return ing;
+    public String getING() {
+        return ING;
     }
 
-    public void setIng(String ing) {
-        this.ing = ing;
+    public void setING(String ING) {
+        this.ING = ING;
     }
 
-    public String getFol() {
-        return fol;
+    public String getFOL() {
+        return FOL;
     }
 
-    public void setFol(String fol) {
-        this.fol = fol;
+    public void setFOL(String FOL) {
+        this.FOL = FOL;
     }
 
-    public String getCeac() {
-        return ceac;
+    public String getCEAC() {
+        return CEAC;
     }
 
-    public void setCeac(String ceac) {
-        this.ceac = ceac;
+    public void setCEAC(String CEAC) {
+        this.CEAC = CEAC;
     }
     
     @Override
     public String toString() {
-        return alumno + ";" + oacv + ";" + ea + ";" + tii + ";" + tc + ";" + ing + ";" + fol + ";" + ceac;
+        return alumno + ";" + OACV + ";" + EA + ";" + TII + ";" + TC + ";" + ING + ";" + FOL + ";" + CEAC;
     }
 }
