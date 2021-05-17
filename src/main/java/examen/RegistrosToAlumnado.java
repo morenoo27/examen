@@ -30,7 +30,7 @@ public class RegistrosToAlumnado {
     }
 
     /**
-     * metodo que crea un alumno a partir de un objeto tipo RegistroJSON
+     * Metodo que crea un alumno a partir de un objeto tipo RegistroJSON
      *
      * @param registro registro que queremos convertir
      * @return Objeto de tipo alumno
@@ -46,23 +46,26 @@ public class RegistrosToAlumnado {
     }
 
     /**
-     * metodo que , llamando al metodo de la clase LeerCSV obtiene las iniciales de cada modulo
+     * Metodo que , llamando al metodo de la clase LeerCSV obtiene las iniciales de cada modulo
      * 
      * @return Lista con las inicales de los modulos
      */
     private static ArrayList<String> obtenerIniciales() {
 
         Map<String, String> asignaturas = LecturaCSV.leerArchivoCSV("nombresModulos", "./");
+        
         ArrayList<String> iniciales = new ArrayList<>();
+        
         for (Map.Entry<String, String> entry : asignaturas.entrySet()) {
 
             iniciales.add(entry.getKey());
         }
+        
         return iniciales;
     }
 
     /**
-     * metodo que crea una estructura Map con relaicon inicial->nota
+     * Metodo que crea una estructura Map con relaicon inicial->nota
      *
      * @param iniciales iniciales de los modulos
      * @param registro registro en cuestion
@@ -76,25 +79,25 @@ public class RegistrosToAlumnado {
 
             switch (inicial) {
                 case "OACV":
-                    calificaiocnes.put(inicial, registro.getOacv());
+                    calificaiocnes.put(inicial, registro.getOACV());
                     break;
                 case "EA":
-                    calificaiocnes.put(inicial, registro.getEa());
+                    calificaiocnes.put(inicial, registro.getEA());
                     break;
                 case "TII":
-                    calificaiocnes.put(inicial, registro.getTii());
+                    calificaiocnes.put(inicial, registro.getTII());
                     break;
                 case "TC":
-                    calificaiocnes.put(inicial, registro.getTc());
+                    calificaiocnes.put(inicial, registro.getTC());
                     break;
                 case "ING":
-                    calificaiocnes.put(inicial, registro.getIng());
+                    calificaiocnes.put(inicial, registro.getING());
                     break;
                 case "FOL":
-                    calificaiocnes.put(inicial, registro.getFol());
+                    calificaiocnes.put(inicial, registro.getFOL());
                     break;
                 case "CEAC":
-                    calificaiocnes.put(inicial, registro.getCeac());
+                    calificaiocnes.put(inicial, registro.getCEAC());
                     break;
             }
         }

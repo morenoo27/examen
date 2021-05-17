@@ -19,11 +19,8 @@ public class AlumnadoToTSV {
     public static void escribirTSV(Alumno alumno, Map<String, String> asignaturas) {
 
         String idFichero = "./alumnado/" + alumno.getNombre().concat(".tsv").replace(" ", "");
-
+//falta crar carpeta
         try ( BufferedWriter flujo = new BufferedWriter(new FileWriter(idFichero))) {
-
-            flujo.write(alumno.getNombre());
-            flujo.newLine();
 
             for (Map.Entry<String, String> entry : alumno.getCalificaciones().entrySet()) {
 
@@ -31,15 +28,15 @@ public class AlumnadoToTSV {
 
                 nombreAsignatura = buscarNombre(asignaturas, entry.getKey());
                 
-                flujo.write(nombreAsignatura + ":" + entry.getValue() + "\t");
-
+                flujo.write(nombreAsignatura + "\t" + entry.getValue());
+                
+                flujo.newLine();
             }
 
             System.out.println("Fichero " + alumno.getNombre().concat(".tsv").replace(" ", "") + " creado correctamente.");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     /**

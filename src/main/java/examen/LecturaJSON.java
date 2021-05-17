@@ -16,8 +16,6 @@ import java.util.ArrayList;
  */
 public class LecturaJSON {
     
-    
-    
     public static ArrayList<RegistroJSON> leerFicheroJSONconLista (String nombreArchivo,String ruta) {
 
         String idFichero = ruta + nombreArchivo.concat(".json");
