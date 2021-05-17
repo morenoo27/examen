@@ -5,14 +5,11 @@
  */
 package examen;
 
-import com.sun.tools.javac.Main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -63,7 +60,6 @@ public class LecturaCSV {
             System.out.println("No se encuentra el archivo");
         }
 
-        
         return totalAsignaturas.stream().collect(Collectors.toMap(token -> token[0], token -> token[1]));
     }
 }
