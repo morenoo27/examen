@@ -7,7 +7,7 @@ package examen;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -63,9 +63,8 @@ public class Estadística {
      *    -Almacenamos el registro en  una lista de objetos Alumno
      *    -De cada objeto Alumno nos quedamos con la estructura map con sus
      *calificaciones
-     *    -Nos centramos en aquellas que sean las iniciales del modulo en concreto
-     *    -De ese nuevo map, amacenamos los values en la lista que querremos
-     *devolver
+     *    -De las calificaciones, obtenemos la que tenga como key 'iniciales'
+     *    -Lo transformamos en una lista de String
      * </pre>
      *
      * @param iniciales iniciales del modulo que queremos
@@ -74,17 +73,10 @@ public class Estadística {
      */
     private List<String> calificacionesModulo(String iniciales, ArrayList<RegistroJSON> registros) {
 
-        List<String> notas = null;
-
-        Map<String, String> calificacionesModulo = (Map<String, String>) RegistrosToAlumnado.registrosALista(registros).stream()
+        return RegistrosToAlumnado.registrosALista(registros).stream()
                 .map(alumno -> alumno.getCalificaciones())
-                .filter(calif -> calif.containsKey(iniciales));
-
-        calificacionesModulo.entrySet().forEach(entry -> {
-            notas.add(entry.getValue());
-        });
-
-        return notas;
+                .map(calif -> calif.get(iniciales))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -122,7 +114,8 @@ public class Estadística {
         });
 
         return (ArrayList<Integer>) totalCalificaiones.stream()
-                .filter(calificacion -> calificacion >= 0);
+                .filter(calificacion -> calificacion >= 0)
+                .collect(Collectors.toList());
     }
 
 }
