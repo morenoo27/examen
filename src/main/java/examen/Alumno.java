@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author alejandro
  */
-public class Alumno {
+public class Alumno implements Comparable<Alumno> {
     
     private String nombre;
     private Map<String, String> calificaciones;
@@ -47,5 +47,10 @@ public class Alumno {
             calificacion += " ";
         }
         return calificacion;
+    }
+
+    @Override
+    public int compareTo(Alumno al) {
+        return this.nombre.compareTo(al.getNombre());
     }
 }
